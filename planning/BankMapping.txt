@@ -1,0 +1,24 @@
+Rom bank mapping
+32 banks in total
+
+BANK 0
+======
+main game code/header/etc
+
+BANK 1
+======
+text/ui graphics, size 1536
+Dialog expressions graphics
+
+BANK 2
+======
+Dialog text
+
+BANK 3 - 5
+==========
+map data (tile map)
+map meta data
+
+Bank 6
+======
+map tile patterns

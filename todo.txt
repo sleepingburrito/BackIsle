@@ -1,0 +1,32 @@
+====
+Todo
+=====
+make sprites work at all
+sprite index helper
+hide all sprites (and one for temp hide dilog)
+
+16bit checksum for saving
+make drawing BG/Sprites/General
+make floor0
+
+where can you use color pallets? Sprites?
+enum for dilog expressions
+draw tile map back at end of dialog
+draw sprites back
+test expression better
+finish clear screen function for text
+js tool that makes sure text fits on screen and formatted correcly
+skip text button (start?)
+hide all sprite function
+see if DAM copy is working
+
+==========
+Game Ideas
+==========
+*look out window and chill button, can use full tile map
+*strat guide
+*Screen goes black parallax room switch
+*mid scanline effects
+*small stories per npc, overarching story, complet x quests to move to next floor
+*Guy at the edge of the screen you never see, somone burst though walls, map tile effects, death?
+*Word bubbles and cutsences

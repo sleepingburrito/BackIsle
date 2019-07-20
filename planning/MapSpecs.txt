@@ -1,0 +1,5 @@
+120x108 tiles per level
+16x18 tiles per screen
+8x8 pixels tiles
+4 color gray per tile
+16x8 (128) tiles per tile pattern
