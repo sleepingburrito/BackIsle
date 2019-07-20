@@ -1,18 +1,1 @@
-    ld A, %10010000
-    ld [BG_COLOR_PALLET], A
-    ld [OBP0_PALLET], A
-    ld [OBP1_PALLET], A
-    rept 4
-    HaltCounter
-    endr
-    ld A, %01000000
-    ld [BG_COLOR_PALLET], A
-    ld [OBP0_PALLET], A
-    ld [OBP1_PALLET], A
-    rept 4
-    HaltCounter
-    endr
-    ld A, %00000000
-    ld [BG_COLOR_PALLET], A
-    ld [OBP0_PALLET], A
-    ld [OBP1_PALLET], A
+=
