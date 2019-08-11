@@ -7,10 +7,13 @@ SECTION "MAIN", ROM0[$0150]
 ;Place pointer to start of string in dialogTextStart
 StartDialog:
     ;start
-    push AF
-    push BC
-    push DE
-    push HL
+    PushAllRegs
+
+    ;hide sprites
+    call DrawMapHideSprites
+    HaltCounter
+    OAMCopyMacro
+
     ;switch to bank
     ld A, [dialogTextBank]
     RomBankSwitchMacro
@@ -77,10 +80,8 @@ StartDialog:
     ;exit
 .ExitDialog
     call DrawMapDialogExit
-    pop HL
-    pop DE
-    pop BC
-    pop AF
+
+    PopAllRegs
     ret
 
 

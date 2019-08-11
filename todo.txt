@@ -1,9 +1,23 @@
 ====
 Todo
 =====
-make sprites work at all
-sprite index helper
-hide all sprites (and one for temp hide dilog)
+make player stand in place and be able to turn
+map collion code
+load a map
+map switch code
+npc map code
+give the player move speeds
+
+orginze:
+add another text bank
+rename sprites in constants to OAM
+give banks a macro value
+make sure patters are name that and tile maps
+for bg make one half of the patterns like floor and the other funature
+
+add more map pattern data banks
+test hide dilog sprites
+make test sprites for players
 
 16bit checksum for saving
 make drawing BG/Sprites/General
@@ -23,6 +37,9 @@ see if DAM copy is working
 ==========
 Game Ideas
 ==========
+*slow warorr war the Game (basicaluy mini games to progress story)
+*silly sound effects, ambient music, envormental sounds (noise, printer phones, waves)
+
 *look out window and chill button, can use full tile map
 *strat guide
 *Screen goes black parallax room switch

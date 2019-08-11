@@ -4,6 +4,9 @@ RomBankSwitchMacro equs "ld [romBank], a\nld [$2000], a\n"
 ;Clear Carry Test Zero for A
 CCTZ equs "or a\n"
 
+;mult a by 16
+MultAby16 equs "swap A\n"
+
 ;Zeros a
 ZeroA equs "xor a"
 
@@ -61,20 +64,6 @@ TestEq16Bit: macro
 .exit\@
     endm
 
-;struct offset macro
-;DE must point to start of struct
-;Return is HL pointing to item
-;\1 is the 8bit offset
-StructSetOffsetHlMacro: macro
-    ld H, D
-    ld L, E
-    push DE
-    ld D, 0
-    ld E, \1
-    add HL, DE
-    pop DE
-    endm
-
 ;Copy a constant pointer to an address little endian
 ;arg0: constant address
 ;arg1: copy to
@@ -111,4 +100,25 @@ SetR16Pointer: macro
     ld [\3], A
     ld A, \1
     ld [\3 + 1], A
+    endm
+
+
+;copy a constant 16bit value int adress
+;arg0 16 value
+;arg1 copy to
+;clobbers A
+CopyConst16: macro
+    push HL
+    ld HL, \1
+    SetR16Pointer H,L,\2
+    pop HL
+    endm
+
+;arg0 value
+;arg1 copy to
+CopyConst8Bit: macro
+    push AF
+    ld A, \1
+    ld [\2], A
+    pop AF
     endm

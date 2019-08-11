@@ -2,7 +2,7 @@ SECTION "MAIN", ROM0[$0150]
 
 ;Clear Dialog area
 ;=================
-;clears ~lower 3ed of the screen
+;clears top 3ed of the screen
 ;clobbers a 
 ;Warning, loop unrolling, keep in mind when modifing
 ClearDialogArea:
@@ -137,7 +137,29 @@ DrawMapDialogExit:
     ret
 
 
-;Hide sprites in Dialog
-;======================
+;Hide sprites in Dialog area
+;===========================
+;clobbers A
+;make sure to update OAM
 DrawMapHideSprites:
+    push HL
+
+    ld H, SPRITE_START_HIGHBYTE
+    ld L, SPRITE_OAM_SIZE_MAX_BYTES - 4 ;-4 to start at y in OAM 
+    ZeroA
+.loop
+    ld A, [HL]
+    cp DILOG_DRAW_Y_HIGHT
+    jp nc, .skipHide
+    ZeroA 
+    ld [HL], A
+.skipHide:
+    dec L
+    dec L
+    dec L
+    dec L
+    jp nz, .loop
+    ld [HL], A
+
+    pop HL
     ret

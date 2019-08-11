@@ -12,3 +12,8 @@ INCBIN "graphics/bgTilePat0.2bpp"
 
 BgTilePat1:
 INCBIN "graphics/bgTilePat1.2bpp"
+
+
+SECTION "sprites",ROMX,BANK[8]
+PlayerSprite:
+INCBIN "graphics/playeranimted.2bpp"

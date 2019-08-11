@@ -1,77 +1,110 @@
 ROM Bank #0 (HOME):
   SECTION: $0040-$0040 ($0001 bytes) ["Interrupt Vblank"]
   SECTION: $0100-$014F ($0050 bytes) ["HEADER"]
-  SECTION: $0150-$0643 ($04F4 bytes) ["MAIN"]
+  SECTION: $0150-$0938 ($07E9 bytes) ["MAIN"]
            $0150 = InitSystem
            $0199 = StartingStateZeroRam
-           $01D9 = DMA_COPY
+           $01F4 = DMA_COPY
            $01A7 = ExitStartingState
            $019D = StartingStateZeroRam.loop
-           $0459 = InitGraphics
-           $0205 = ReadJoypad
-           $042E = AddSprite
-           $01ED = FrameCounter
-           $0449 = HideAllSprites
-           $01AA = GameLoop
-           $01CD = Copy.loop
-           $0202 = FrameCounter.Exit
-           $022B = PauseAnyKey
-           $0268 = StartDialog.FirstTimer
-           $02AA = ZeroOutdialogStringBuffer
-           $02BC = ClearDialogArea
-           $02E6 = DrawDialogExpr
-           $0287 = StartDialog.skipCheckExpres
-           $0276 = StartDialog.loop
-           $0364 = DrawText
-           $029C = StartDialog.loopLastInput
-           $0265 = StartDialog.ResetScreen
-           $033E = DrawMapDialogExit
-           $02B3 = ZeroOutdialogStringBuffer.loop
-           $02E2 = ClearDialogArea.Exit
-           $02DE = ClearDialogArea.moveDownColum
-           $02D1 = ClearDialogArea.loop
-           $02CF = ClearDialogArea.resetY
-           $0305 = DrawDialogExpr.CopyTilePatternLoop
-           $02FE = DrawDialogExpr.CopySecondFrame
-           $032C = DrawDialogExpr.SkipNewColum
-           $0323 = DrawDialogExpr.loopTileMap
-           $05A7 = CopyMapTileMap
-           $040E = OffsetHlBgTilemap
-           $0397 = DrawText.jumpToEnd
-           $0391 = DrawText.notNewLine
-           $0394 = DrawText.loopCopyUpkeep
-           $037C = DrawText.loopCopyText
-           $03AA = ByteToHexStringHelper
-           $03B4 = ByteToHexStringHelper.letter
-           $03CB = ByteToDecString.test100
-           $03D6 = ByteToDecString.test10s
-           $03EC = ByteToDecString.lessThan10
-           $03DC = ByteToDecString.loop10s
-           $03EF = ByteToDecString.test1s
-           $03F9 = CopyTileMap.loop
-           $0420 = OffsetHlBgTilemap.setX
-           $041B = OffsetHlBgTilemap.loopy
-           $0444 = AddSprite.skipReset
-           $044F = HideAllSprites.loop
-           $01C7 = Copy
-           $052C = TileMapStartOffset
-           $0578 = SetMapTilePatternPointer
-           $0540 = TileMapStartOffset.SetX
-           $053B = TileMapStartOffset.loopY
-           $0550 = TileMapStartOffset.exit
-           $054B = TileMapStartOffset.loopX
-           $0571 = TileMapOffset.setX
-           $056C = TileMapOffset.loopY
-           $058C = SetMapTilePatternPointer.setX
-           $0587 = SetMapTilePatternPointer.loopY
-           $0598 = SetMapTilePatternPointer.exit
-           $05B5 = CopyMapTileMap.copyMapLoop
-           $05A7 = CopyMapTileMap.setXCount
-           $0605 = SaveGame.loop
-           $0627 = LoadGame.loop
+           $063C = InitGraphics
+           $07DE = InitPlayer
+           $0220 = ReadJoypad
+           $052A = HideAllSprites
+           $0806 = PlayerStep
+           $0208 = FrameCounter
+           $01C9 = GameLoop
+           $01E4 = Copy.loop
+           $021D = FrameCounter.Exit
+           $0246 = PauseAnyKey
+           $0389 = DrawMapHideSprites
+           $028E = StartDialog.FirstTimer
+           $02D0 = ZeroOutdialogStringBuffer
+           $02E2 = ClearDialogArea
+           $030C = DrawDialogExpr
+           $02AD = StartDialog.skipCheckExpres
+           $029C = StartDialog.loop
+           $03A1 = DrawText
+           $02C2 = StartDialog.loopLastInput
+           $028B = StartDialog.ResetScreen
+           $0364 = DrawMapDialogExit
+           $02D9 = ZeroOutdialogStringBuffer.loop
+           $0308 = ClearDialogArea.Exit
+           $0304 = ClearDialogArea.moveDownColum
+           $02F7 = ClearDialogArea.loop
+           $02F5 = ClearDialogArea.resetY
+           $032B = DrawDialogExpr.CopyTilePatternLoop
+           $0324 = DrawDialogExpr.CopySecondFrame
+           $0352 = DrawDialogExpr.SkipNewColum
+           $0349 = DrawDialogExpr.loopTileMap
+           $04E1 = CopyMapTileMap
+           $0397 = DrawMapHideSprites.skipHide
+           $038F = DrawMapHideSprites.loop
+           $044B = OffsetHlBgTilemap
+           $03D4 = DrawText.jumpToEnd
+           $03CE = DrawText.notNewLine
+           $03D1 = DrawText.loopCopyUpkeep
+           $03B9 = DrawText.loopCopyText
+           $03E7 = ByteToHexStringHelper
+           $03F1 = ByteToHexStringHelper.letter
+           $0408 = ByteToDecString.test100
+           $0413 = ByteToDecString.test10s
+           $0429 = ByteToDecString.lessThan10
+           $0419 = ByteToDecString.loop10s
+           $042C = ByteToDecString.test1s
+           $0436 = CopyTileMap.loop
+           $045D = OffsetHlBgTilemap.setX
+           $0458 = OffsetHlBgTilemap.loopy
+           $073E = TileMapStartOffset
+           $04B2 = SetMapTilePatternPointer
+           $01DE = Copy
+           $04C6 = SetMapTilePatternPointer.setX
+           $04C1 = SetMapTilePatternPointer.loopY
+           $04D2 = SetMapTilePatternPointer.exit
+           $04EF = CopyMapTileMap.copyMapLoop
+           $04E1 = CopyMapTileMap.setXCount
+           $0524 = AddSprite.skipReset
+           $0530 = HideAllSprites.loop
+           $054B = LoadNpcSprites.loop
+           $0549 = LoadNpcSprites.resetRowCopy
+           $05B2 = DrawNpcSprite.animation
+           $0585 = DrawNpcSprite.skipUp
+           $0592 = DrawNpcSprite.skipDown
+           $059F = DrawNpcSprite.skipRight
+           $05AF = DrawNpcSprite.skipLeft
+           $0637 = DrawNpcSprite.exit
+           $05C4 = DrawNpcSprite.skipAnimation
+           $0601 = DrawNpcSprite.walkLeft
+           $050D = AddSprite
+           $053A = LoadNpcSprites
+           $066D = FadeDisplayOff
+           $046B = LoadTileMapBg
+           $06C9 = FadeDisplayOn
+           $0752 = TileMapStartOffset.SetX
+           $074D = TileMapStartOffset.loopY
+           $0762 = TileMapStartOffset.exit
+           $075D = TileMapStartOffset.loopX
+           $079F = SaveGame.loop
+           $07C1 = LoadGame.loop
+           $0729 = LoadMap
+           $0828 = PlayerStep.moveY
+           $0827 = PlayerStep.moveXLeft
+           $0840 = PlayerStep.exitMoving
+           $083F = PlayerStep.moveYUp
+           $08FD = PlayerStep.userIOMovingExit
+           $086F = PlayerStep.skipUpKey
+           $087C = PlayerStep.skipDownKey
+           $0899 = PlayerStep.skipUpIoCheck
+           $08AE = PlayerStep.userIOMovingExitX
+           $08BE = PlayerStep.skipLeftKey
+           $08CB = PlayerStep.skipRightKey
+           $08E8 = PlayerStep.skipLeftIoCheck
+           $0934 = PlayerStep.exitDrawing
+           $0921 = PlayerStep.skipDrawFastWalk
+           $0563 = DrawNpcSprite
   SECTION: $0028-$0038 ($0011 bytes) ["Copy DAM Data RST"]
            $002E = COPY_DATA.copy_data_loop
-    SLACK: $3AAA bytes
+    SLACK: $37B5 bytes
 
 ROM Bank #1:
   SECTION: $4000-$4BFF ($0C00 bytes) ["Gfx0"]
@@ -98,10 +131,21 @@ ROM Bank #6:
            $4000 = BgTilePat0
     SLACK: $3200 bytes
 
+ROM Bank #7:
+  EMPTY
+
+ROM Bank #8:
+  SECTION: $4000-$417F ($0180 bytes) ["sprites"]
+           $4000 = PlayerSprite
+    SLACK: $3E80 bytes
+
 WRAM Bank #0:
-  SECTION: $C000-$C1EE ($01EF bytes) ["RAM"]
+  SECTION: $C000-$C252 ($0253 bytes) ["RAM"]
            $C0A0 = stack
            $C1A2 = romBank
+           $C1EF = NpcSpriteFacingReg
+           $C1F0 = NpcSpriteXY
+           $C1F2 = NpcSpriteSpeed
            $C1A3 = frameCounter
            $C1A8 = joyPad
            $C1A9 = joyPadLast
@@ -113,15 +157,24 @@ WRAM Bank #0:
            $C1E1 = drawTextY
            $C1DF = dialogExpressIndex
            $C1E4 = mapBank
-           $C1E9 = mapTileMapStart
+           $C1EA = mapTileMapStart
            $C1AA = tmpVars
-           $C1EB = spriteIndex
-           $C1E7 = mapTilePattern
+           $C1E7 = mapTilePatternBank
+           $C1E8 = mapTilePattern
            $C1E6 = mapY
            $C1E5 = mapX
+           $C1EC = spriteIndex
+           $C1ED = spriteBank
+           $C1EE = NpcSpriteTileStart
            $C1BA = rngIndex
            $C1A0 = StackPointer
-    SLACK: $1E11 bytes
+           $C252 = playerFacing
+           $C251 = playerFlags
+           $C24D = playerNpcMapX
+           $C24E = playerNpcMapY
+           $C24F = playerSpriteX
+           $C250 = playerSpriteY
+    SLACK: $1DAD bytes
 
 WRAM Bank #1:
   EMPTY

@@ -10,7 +10,7 @@ SECTION "HEADER", ROM0[$0100]
 	 DB $BB,$BB,$67,$63,$6E,$0E,$EC,$CC,$DD,$DC,$99,$9F,$BB,$B9,$33,$3E
 
 	 DB "BACK ISLE",GAME_VN,0,0,0,0,0 ;Game Name (Uppercase)
-	 DB $80 ;gb + gbc game
+	 DB 0 ;gb + gbc game
 	 DB 0,0     ;0144	0145	Game Manufacturer code
 	 DB $0       ;0146	0146	Super GameBoy flag (&00=normal, &03=SGB)
 	 DB $3	  	  ;0147	0147	Cartridge type 

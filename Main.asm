@@ -17,32 +17,30 @@ SECTION "MAIN", ROM0[$0150]
 	;init code
 	include "StartingState.asm"
 	call InitGraphics
+	call InitPlayer
 
-;testing map loading
-;=============================
+	;=======
+	CopyConst8Bit DIR_LEFT,NpcSpriteFacingReg
 
-;=============================
+	CopyConst8Bit 20,NpcSpriteXY
+	CopyConst8Bit 26,NpcSpriteXY + 1
+	CopyConst8Bit SPRITE_SPEED_SLOW, NpcSpriteSpeed
+	;=======
 
 
 GameLoop:
 	;frame upkeep
 	;=============
 	call ReadJoypad
+	call HideAllSprites
 	
-
-	ld D, 80
-	ld E, 80
-	ld B, $95
-	ld C, 0
-	call AddSprite
-
-
+	call PlayerStep
 
 	;drawing
 	;=======
 	HaltCounter ;wait for start of vblank
 	OAMCopyMacro
-	call HideAllSprites
+	
 	;end of main game loop
 	jp GameLoop
 
@@ -62,12 +60,13 @@ include "Drawing.asm"
 include "Map.asm"
 include "Prng.asm"
 include "SavingLoading.asm"
+include "player.asm"
 
 ;other bank includes
 ;====================
 ;text/ui graphics data 
 include "graphics/Graphics.asm"
 ;dialog/text data
-include "data/DialogData.asm"
+include "text/DialogData.asm"
 ;tile map/map meta data
 include "maps/MapData.asm"

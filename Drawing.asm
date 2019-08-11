@@ -6,6 +6,7 @@ include "graphics/SpriteHelper.asm"
 ;==============
 ;clobbers all regs
 InitGraphics:
+
     ;disable display
 	DisableDisplayMacro
     
@@ -16,6 +17,12 @@ InitGraphics:
 	ld DE, VRAM_TEXT_PARTITION
 	ld BC, VRAM_TEXT_PARTITION_LENGTH
 	call Copy
+
+    ;load player
+    CopyConst8Bit 8, spriteBank
+    ld HL, PlayerSprite
+	ld DE, VRAM_SPRITE_START
+	call LoadNpcSprites
 
     ;end
     EnableDisplayMacro
@@ -34,7 +41,7 @@ FadeDisplayOff:
     ld [BG_COLOR_PALLET], A
     ld [OBP0_PALLET], A
     ld [OBP1_PALLET], A
-    rept 2
+    rept 6
     HaltCounter
     endr
 
@@ -42,7 +49,7 @@ FadeDisplayOff:
     ld [BG_COLOR_PALLET], A
     ld [OBP0_PALLET], A
     ld [OBP1_PALLET], A
-    rept 2
+    rept 6
     HaltCounter
     endr
 
@@ -63,14 +70,14 @@ FadeDisplayOn:
     ld [BG_COLOR_PALLET], A
     ld [OBP0_PALLET], A
     ld [OBP1_PALLET], A
-    rept 2
+    rept 6
     HaltCounter
     endr
     ld A, %10010000
     ld [BG_COLOR_PALLET], A
     ld [OBP0_PALLET], A
     ld [OBP1_PALLET], A
-    rept 2
+    rept 6
     HaltCounter
     endr
     ResetAllPallets

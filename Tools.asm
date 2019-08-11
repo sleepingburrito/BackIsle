@@ -32,4 +32,12 @@ Copy:
 	ret
 
 
-
+;Map to tile cords
+;===============
+;arg/return a
+MapCordsToTile: ;mult by 8
+    rept 3
+    add A
+    endr
+    ret 
+    

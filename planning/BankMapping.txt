@@ -19,6 +19,10 @@ BANK 3 - 5
 map data (tile map)
 map meta data
 
-Bank 6
-======
+BANK 6-7
+========
 map tile patterns
+
+BANK 8
+======
+sprites

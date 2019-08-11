@@ -12,8 +12,8 @@ rngIndex: ds 1
 
 ;dialog
 ;======
-dialogTextBank: ds 1
-dialogTextStart: dw
+dialogTextBank: ds 1 ;set
+dialogTextStart: dw ;set
 dialogStringBuffer: ds DILOG_CHANGE_MAX_TEXT_ON_SCREEN
 dialogStringNull: ds 1 ;null to stop text drawing, never used
 dialogExpressIndex: ds 1 ;id of expression to draw
@@ -29,6 +29,8 @@ drawTextPointer: dw
 mapBank: ds 1 ;set for floor
 mapX: ds 1 ;set for x/y
 mapY: ds 1
+mapTilePatternBank: ds 1 
+
 mapTilePattern: dw ;read only, set with SetMapTilePatternPointer
 mapTileMapStart: dw ;read only, set with TileMapStartOffset
 
@@ -36,7 +38,29 @@ mapTileMapStart: dw ;read only, set with TileMapStartOffset
 ;=======
 spriteIndex: ds 1
 spriteBank: ds 1
-spritePatternStart: dw
+
+;npc sprites
+;===========
+NpcSpriteTileStart: ds 1
+NpcSpriteFacingReg: ds 1
+NpcSpriteXY: dw
+NpcSpriteSpeed: ds 1
+
+;npc Map
+;======
+mapNpc: ds NPC_MAP_SIZE
+
+;player
+;======
+playerNpcMapX: ds 1 ;where the player is
+playerNpcMapY: ds 1
+playerSpriteX: ds 1 ;where to draw the player
+playerSpriteY: ds 1
+
+playerFlags: ds 1
+playerFacing: ds 1
+
+
 
 
 SECTION "CART RAM", SRAM
